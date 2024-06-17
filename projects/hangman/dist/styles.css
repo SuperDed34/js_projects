@@ -1,0 +1,206 @@
+/*!***************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/styles.scss ***!
+  \***************************************************************************************************************/
+body {
+  background-color: #699B36;
+  font-family: roboto, "sans-serif";
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  body {
+    font-size: 1vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 0.8em;
+  }
+  .container {
+    flex-direction: column !important;
+  }
+}
+@media screen and (max-width: 360px) {
+  body {
+    font-size: 0.5em;
+  }
+}
+.container {
+  display: flex;
+  padding: 2em;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin: 2em auto;
+  height: fit-content;
+  width: 85vw;
+  max-width: 1440px;
+  background-color: #B1E878;
+  border-radius: 2em;
+  box-shadow: 0 0.2em 0.7em 0em;
+}
+.container .play-zone {
+  background-color: white;
+  border-radius: 1em;
+  box-shadow: 0 0.2em 0.7em 0em;
+}
+.container .play-zone .gallows {
+  margin: 1em;
+  height: 30em;
+  width: 25em;
+  background-image: url(images/hangman-0.4da4e9958eff5f059746.svg);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.container .quiz-zone {
+  height: fit-content;
+  width: fit-content;
+}
+.container .quiz-zone .quiz-answer {
+  display: flex;
+  margin: 1em auto;
+  height: 8em;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  background-color: white;
+  border-radius: 1em;
+  box-shadow: 0 0.2em 0.7em 0em;
+}
+.container .quiz-zone .quiz-answer .quiz-answer_letter {
+  font-size: 3em;
+  font-weight: 600;
+  height: 1em;
+  width: 1em;
+  border-bottom: 0.06em solid darkgreen;
+  text-align: center;
+}
+.container .quiz-zone .quiz-question {
+  padding: 1em 0;
+  text-align: center;
+  font-size: 2em;
+  background-color: white;
+  border-radius: 0.5em;
+  box-shadow: 0 0.2em 0.7em 0em;
+  margin: 1em auto;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+}
+.container .quiz-zone .quiz-question .quiz-attempt-counter {
+  margin-top: 0.5em;
+  color: red;
+  font-size: 0.5em;
+}
+.container .quiz-zone .quiz-heading {
+  text-align: center;
+  font-weight: 900;
+}
+.container .keyboard {
+  height: fit-content;
+  width: 96%;
+  padding: 1em;
+  background-color: white;
+  opacity: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+  max-width: 1440px;
+  border-radius: 1em;
+  box-shadow: 0 0.2em 0.7em 0em;
+}
+.container .keyboard .button {
+  height: 3.5em;
+  width: 3.5em;
+  padding: 1em;
+  background-color: #53200F;
+  border-radius: 0.5em;
+  color: white;
+  z-index: 2;
+  cursor: pointer;
+  box-shadow: 0.001em 0.6em 0.7em 0.001em black;
+}
+.container .keyboard .button:disabled {
+  transition: 0.5s;
+  background-color: #043a14;
+  box-shadow: 0 0em 0em 0em;
+  transform: scale(0.9);
+  cursor: not-allowed;
+}
+@media (hover: hover) and (pointer: fine) {
+  .container .keyboard .button:hover {
+    transition: 0.5s;
+    background-color: #043a14;
+    box-shadow: 0 0em 0em 0em;
+    transform: scale(0.9);
+  }
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+  background-color: rgba(255, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+.modal-background .modal-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+  justify-content: space-between;
+  margin: 20vh auto;
+  width: 50vw;
+  height: 50vh;
+  background-color: #FFFFFF;
+  border-radius: 1em;
+  z-index: 10000;
+}
+.modal-background .modal-container .modal-pic {
+  width: 50%;
+  height: 50%;
+  margin: 1em auto;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.modal-background .modal-container .modal-result {
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+}
+.modal-background .modal-container .modal-answer {
+  text-align: center;
+  font-size: medium;
+  font-style: italic;
+}
+.modal-background .modal-container .modal-button {
+  width: 40%;
+  height: 4em;
+  margin: 1em auto;
+  background-color: #53200F;
+  border-radius: 0.5em;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0.001em 0.6em 0.7em 0.001em black;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 10000;
+}
